@@ -34,7 +34,7 @@ client = Client()
 
 async def get_exploit():
     exploit = await client.get_exploit("Synapse")
-    print(exploit.status)
+    print(exploit.updated)
 
 
 loop = asyncio.new_event_loop()
