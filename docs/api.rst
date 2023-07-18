@@ -31,20 +31,12 @@ Status
 .. autoclass:: weao.status.Status()
     :members:
 
-Log
-~~~~~~~
-
-.. attributetable:: Log
-
-.. autoclass:: weao.exploit.Log()
-    :members:
-
 Roblox
 ~~~~~~~
 
 .. attributetable:: Roblox
 
-.. autoclass:: weao.exploit.Roblox()
+.. autoclass:: weao.roblox.Roblox()
     :members:
 
 Exploits
@@ -131,6 +123,14 @@ Comet
     :members:
 
 
+Hydrogen
+~~~~~~~
+
+.. attributetable:: Hydrogen
+
+.. autoclass:: weao.exploit.Hydrogen()
+    :members:
+
 Exceptions
 ----------
 
@@ -152,7 +152,6 @@ Exception Hierarchy
 
     - :exc:`Exception`
         - :exc:`WEAOException`
-           - :exc:`ExploitNotFound`
-           - :exc:`UnsupportedExploit`
-           - :exc:`StatusUnavailable`
-           - :exc:`LogsUnavailable`
+           - :exc: `HTTPException`
+            - :exc:`NotFound`
+            - :exc:`WEAOUnavailable`

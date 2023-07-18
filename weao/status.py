@@ -12,8 +12,10 @@ from .exploit import (
     Celestial,
     Comet,
     Elexe,
-    Roblox,
+    Hydrogen,
 )
+
+__all__: Tuple[str, ...] = ("Status",)
 
 
 class Status:
@@ -44,8 +46,8 @@ class Status:
         Comet Exploit Status
     elexe: :class:Elexe
         Elexe Exploit Status
-    roblox: :class:Roblox
-        ROBLOX Exploit Status
+    hydrogen: :class:Hydrogen
+        Hydrogen Exploit Status
     """
 
     __slots__: Tuple[str, ...] = (
@@ -60,22 +62,22 @@ class Status:
         "celestial",
         "comet",
         "elexe",
-        "roblox",
+        "hydrogen",
     )
 
     def __init__(self, data: Dict) -> None:
-        self.synapse = Synapse(data[0].get("Synapse"))
-        self.script_ware = ScriptWare(data[1].get("Script-Ware"))
-        self.krnl = Krnl(data[2].get("KRNL"))
-        self.dx9ware = Dx9Ware(data[3].get("DX9WARE"))
-        self.electron = Electron(data[4].get("Electron"))
-        self.wearedevs_api = WeAreDevs(data[5].get("WeAreDevs API"))
-        self.oxygen = OxygenU(data[6].get("Oxygen-U"))
-        self.fluxus = Fluxus(data[7].get("Fluxus"))
-        self.celestial = Celestial(data[8].get("Celestial"))
-        self.comet = Comet(data[9].get("Comet"))
-        self.elexe = Elexe(data[10].get("Elexe"))
-        self.roblox = Roblox(data[11].get("ROBLOX"))
+        self.synapse: Synapse = Synapse(data.get("Synapse"))
+        self.script_ware: ScriptWare = ScriptWare(data.get("Script-Ware"))
+        self.krnl: Krnl = Krnl(data.get("KRNL"))
+        self.dx9ware: Dx9Ware = Dx9Ware(data.get("DX9WARE"))
+        self.electron: Electron = Electron(data.get("Electron"))
+        self.wearedevs_api: WeAreDevs = WeAreDevs(data.get("WeAreDevs API"))
+        self.oxygen: OxygenU = OxygenU(data.get("Oxygen-U"))
+        self.fluxus: Fluxus = Fluxus(data.get("Fluxus"))
+        self.celestial: Celestial = Celestial(data.get("Celestial"))
+        self.comet: Comet = Comet(data.get("Comet"))
+        self.elexe: Elexe = Elexe(data.get("Elexe"))
+        self.hydrogen: Hydrogen = Hydrogen(data.get("Hydrogen"))
 
     def __repr__(self) -> str:
         return "<Status>"

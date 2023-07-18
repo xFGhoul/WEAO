@@ -5,17 +5,6 @@ from weao.client import Client
 
 
 @pytest.mark.asyncio
-async def test_get_exploit() -> None:
-    session = aiohttp.ClientSession()
-    client = Client(session=session)
-
-    exploit = await client.get_exploit("Synapse")
-    await client.cleanup()
-
-    assert exploit.website == "https://x.synapse.to"
-
-
-@pytest.mark.asyncio
 async def test_get_status() -> None:
     session = aiohttp.ClientSession()
     client = Client(session=session)
@@ -27,11 +16,11 @@ async def test_get_status() -> None:
 
 
 @pytest.mark.asyncio
-async def test_get_logs() -> None:
+async def test_get_roblox() -> None:
     session = aiohttp.ClientSession()
     client = Client(session=session)
 
-    logs = await client.get_logs("Synapse", 3)
+    roblox = await client.get_roblox()
     await client.cleanup()
 
-    assert logs[1].version == "v2.23.9b"
+    assert roblox.windows.player == "WindowsPlayer"

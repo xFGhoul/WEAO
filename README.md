@@ -32,13 +32,13 @@ from weao import Client
 client = Client()
 
 
-async def get_exploit():
-    exploit = await client.get_exploit("Synapse")
-    print(exploit.updated)
+async def get_status():
+    status = await client.get_status()
+    print(status.synapse.download_url)
 
 
 loop = asyncio.new_event_loop()
-loop.run_until_complete(get_exploit())
+loop.run_until_complete(get_status())
 ```
 
 You can find more examples in the [examples](https://github.com/xFGhoul/WEAO/blob/dev/examples/) directory.
