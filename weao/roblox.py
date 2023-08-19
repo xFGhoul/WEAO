@@ -24,15 +24,15 @@ class Roblox:
     """
 
     __slots__: Tuple[str, ...] = (
-        "mobile",
         "windows",
         "mac",
+        "mobile",
     )
 
     def __init__(self, data: Dict) -> None:
-        self.mobile = RobloxMobile(data[0])
-        self.windows = RobloxWindows(data[1])
-        self.mac = RobloxMac(data[2])
+        self.windows = RobloxWindows(data[0])
+        self.mac = RobloxMac(data[1])
+        self.mobile = RobloxMobile(data[2])
 
 
 class RobloxPlatform:
